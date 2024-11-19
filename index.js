@@ -7,6 +7,7 @@ require('dotenv').config()  //this will allow .env file.  by default env k varib
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
+app.use(express.static("dist"))
 app.use(cors({ origin: 'http://localhost:5173', credentials: true }))   //no credentials no cookies in frontend
 mongoose.connect(process.env.MONGO_URL)
 
